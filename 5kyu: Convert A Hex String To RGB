@@ -1,0 +1,8 @@
+function hexStringToRGB(hexString) {
+
+  let r = parseInt((hexString[1] + hexString[2]), 16)
+  let g = parseInt((hexString[3] + hexString[4]), 16)
+  let b = parseInt((hexString[5] + hexString[6]), 16)
+  const obj = {r :r, g: g, b: b}
+  return obj
+}
