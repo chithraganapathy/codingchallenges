@@ -1,0 +1,37 @@
+function pickPeaks(arr){
+  console.log(arr)
+  let pos = [];
+  let peaks = [];
+  let current;
+  let position;
+  let rightposition;
+  let right;
+  let result = {pos: pos,
+               peaks: peaks}
+  if(arr.length == 0)
+    return result;
+  for(let i=1; i < arr.length; i++) {
+    if (arr[i] > arr[i-1]) {
+      if (arr[i] > arr[i+1]) {
+        pos.push(i)
+        peaks.push(arr[i])
+        }
+      else if (arr[i] == arr[i+1]) {
+        current = arr[i]
+        position = i;
+        rightposition = i+1;
+        right = arr[rightposition]
+        while (current == right) {
+          rightposition = rightposition+1;
+          right=arr[rightposition]
+        }
+          if (current > right) {
+            pos.push(position)
+            peaks.push(current)
+          }
+        i = rightposition - 1;
+      }
+    }
+  }
+  return result
+}
