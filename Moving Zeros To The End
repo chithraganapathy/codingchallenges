@@ -1,0 +1,9 @@
+function moveZeros(arr) {
+  let r = arr.filter(x => x !== 0)
+  let m = arr.length
+  let n = r.length
+  for(let i =0;i <(m-n);i++) {
+    r.push(0)
+  }
+  return r
+}
